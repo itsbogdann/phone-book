@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package util;
 
@@ -9,10 +5,7 @@ import java.io.*;
 import javax.servlet.http.*;
 
 import java.util.*;
-/**
- *
- * @author andu
- */
+
 public class Util {
     HttpServletResponse response;
     HttpServletRequest request;

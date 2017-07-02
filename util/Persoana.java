@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package util;
 import util.*;
@@ -11,10 +8,7 @@ import com.mysql.jdbc.Driver;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author andu
- */
+
 public class Persoana {
     static Connection c;
 
@@ -98,8 +92,7 @@ public class Persoana {
         return rezultate;
     }
      public ArrayList searchlist(String nume , String prenume, String adresa) {
-         //nume=""; prenume=""; adresa="";
-
+        
         ArrayList rezultate = new ArrayList();
         
 
@@ -111,11 +104,7 @@ public class Persoana {
             sql=sql+"order by id asc";
             Statement s = c.createStatement();
             ResultSet rs = s.executeQuery(sql);
-             /*String sqlp="SELECT * FROM agenda ";
-             if (!prenume.equals("")) sql=sql+"where prenume like '"+prenume+"'";
-            sqlp=sqlp+"order by id asc";
-            Statement sp = c.createStatement();
-            ResultSet rs = sp.executeQuery(sql);*/
+            
 
             while (rs.next()) {
                 Persoana p = new Persoana(
@@ -143,7 +132,7 @@ public class Persoana {
 
     public void save() {
         try {
-            // daca p.id e setat atunci ar trebui facut un update si nu un insert
+           
             PreparedStatement p = c.prepareStatement("INSERT INTO agenda (nume, prenume, telmobil, telfix, email, adresa, judet, oras, cod) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             p.setString(1, nume);
             p.setString(2, prenume);
